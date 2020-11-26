@@ -28,16 +28,17 @@ const Statistics = ({good, neutral, bad}) => {
   const positive = good*100/all
   if (good !== 0 || neutral !== 0 || bad !== 0) {
     return (
-      <>
-        <h1>statistics</h1>
+      <table>
+        <tbody>
+        
         <Statistic text="good" value={good} />
         <Statistic text="neutral" value={neutral} />
         <Statistic text="bad" value={bad} />
         <Statistic text="all" value={all} />
         <Statistic text="average" value={average} />
         <Statistic text= "positive" value={positive+'%'}/> 
-        
-      </>
+        </tbody>  
+      </table>
     );
   }
 
@@ -57,13 +58,16 @@ const App = () => {
   const increaseBad = () => setBad(bad + 1)
 
   return (
-    <>
+  <>
+    
      <Display counter={"give feedback"} />
      <Button handleClick={increaseGood} text='good' />
      <Button handleClick={increaseNeutral} text='neutral' />   
      <Button handleClick={increaseBad} text='bad' />  
-     
+     <h1>statistics</h1>
      <Statistics good={good} neutral={neutral} bad={bad} />
+    
+    
     </>
   )
 }

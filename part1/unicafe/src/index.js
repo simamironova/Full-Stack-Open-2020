@@ -23,7 +23,7 @@ const Button = ({ handleClick, text }) => (
 
 const Statistics = ({good, neutral, bad}) => {
 
-  const all = good+bad+neutral
+  const all = good+neutral+bad
   const average = (good-bad)/all
   const positive = good*100/all
   if (good !== 0 || neutral !== 0 || bad !== 0) {
@@ -39,14 +39,14 @@ const Statistics = ({good, neutral, bad}) => {
         <Statistic text= "positive" value={positive+'%'}/> 
         </tbody>  
       </table>
-    );
+    )
   }
 
   return (
     <>
       <p>No feedback given</p>
     </>
-  );
+  )
 }
 const App = () => {
   // save clicks of each button to its own state
